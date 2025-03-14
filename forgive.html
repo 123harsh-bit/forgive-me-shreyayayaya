@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Forgive Me?</title>
+
+    <style>
+
+        body {
+
+            font-family: 'Arial', sans-serif;
+
+            text-align: center;
+
+            background-color: #ffebf3;
+
+            color: #333;
+
+            margin: 0;
+
+            padding: 0;
+
+        }
+
+        .container {
+
+            margin-top: 100px;
+
+        }
+
+        h1 {
+
+            font-size: 28px;
+
+            margin-bottom: 20px;
+
+        }
+
+        button {
+
+            font-size: 18px;
+
+            padding: 10px 20px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            margin: 10px;
+
+            transition: 0.3s;
+
+        }
+
+        .forgive {
+
+            background-color: #4CAF50;
+
+            color: white;
+
+        }
+
+        .not-forgive {
+
+            background-color: #FF6347;
+
+            color: white;
+
+            position: absolute;
+
+        }
+
+        button:hover {
+
+            transform: scale(1.1);
+
+        }
+
+        .hidden {
+
+            display: none;
+
+        }
+
+        .cute-gif {
+
+            width: 200px;
+
+            margin-top: 20px;
+
+            border-radius: 10px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <div class="container">
+
+        <h1>Shreya, I'm really sorry! 💖</h1>
+
+        <p>Will you forgive me? 🥺</p>
+
+        <button class="forgive" onclick="forgiveMe()">I Forgive You 💕</button>
+
+        <button class="not-forgive" id="notForgiveBtn" onmouseover="moveButton()">I'm Not Forgiving You 😠</button>
+
+        
+
+        <div id="response" class="hidden">
+
+            <h2 id="message"></h2>
+
+            <img id="gif" class="cute-gif hidden" src="" alt="Cute Reaction">
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+        function forgiveMe() {
+
+            document.getElementById("message").innerText = "Yay! You made my day! 😊💖";
+
+            document.getElementById("gif").src = "https://media.tenor.com/WRRjP_qOC7cAAAAi/peach-goma-love.gif"; // Cute working GIF
+
+            document.getElementById("gif").classList.remove("hidden");
+
+            document.getElementById("response").classList.remove("hidden");
+
+        }
+
+
+
+        function moveButton() {
+
+            let button = document.getElementById("notForgiveBtn");
+
+            let x = Math.random() * (window.innerWidth - 150); // Random X position
+
+            let y = Math.random() * (window.innerHeight - 100); // Random Y position
+
+            button.style.left = x + "px";
+
+            button.style.top = y + "px";
+
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>
